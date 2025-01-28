@@ -16,3 +16,4 @@ let userController = new UserController("form-user-create", "table-users")
 // processamento assincrono = Atividades e recursos do site, nao dependem da ação do usuario
 // appendChild permite adicionar codigo html, elemento filho do elemento atual
 // if ternario condição pequena 
+// metodo estatico nao precisa da instancia para ser chamado pode ser chamado diretamente

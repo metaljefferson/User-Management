@@ -18,6 +18,8 @@ class UserController {
 
             let values = this.getValues()
 
+            if (!values) return false
+
             this.getPhoto().then((content) => {
 
                 values.photo = content
@@ -59,7 +61,7 @@ class UserController {
             }
             if (file) {
                 fileReader.readAsDataURL(file)
-            }  else {
+            } else {
                 resolve('dist/img/boxed-bg.jpg')
             }
         })
@@ -69,10 +71,23 @@ class UserController {
 
 
         let user = {}
+        let isValid = true;
 
+
+        let requiredFieldsNames = ['name', 'email', 'password']
 
         Array.from(this.formEl.elements).forEach(field => {
 
+
+
+
+            if (requiredFieldsNames.indexOf(field.name) > -1 && !field.value) {
+
+                field.parentElement.classList.add('has-error')
+
+                isValid = false;
+
+            }
 
             if (field.name == "gender") {
 
@@ -80,13 +95,17 @@ class UserController {
                     user[field.name] = field.value
                 }
 
-            }else if (field.name == "admin") {
+            } else if (field.name == "admin") {
                 user[field.name] = field.checked
             } else {
                 user[field.name] = field.value
             }
 
         })
+
+        if (!isValid) {
+            return false;
+        }
 
         return new User(
             user.name,
@@ -105,6 +124,8 @@ class UserController {
 
         let tr = document.createElement('tr')
 
+        tr.dataset.user = JSON.stringify(dataUser)
+
         tr.innerHTML = `
         <td><img src="${dataUser.photo}" alt="User Image" class="img-circle img-sm"></td>
             <td>${dataUser.name}</td>
@@ -118,5 +139,27 @@ class UserController {
         `
 
         this.tableEl.appendChild(tr)
+
+        this.updateCount()
+    }
+
+    updateCount() {
+
+        let numberUsers = 0
+        let numberAdmin = 0
+
+
+        Array.from(this.tableEl.children).forEach(tr=> {
+
+            numberUsers++;
+
+            let user = JSON.parse(tr.dataset.user)
+
+            if (user._admin) numberAdmin++
+
+        })
+
+        document.querySelector("#number-users").innerHTML = numberUsers
+        document.querySelector("#number-users-admin").innerHTML = numberAdmin
     }
 }

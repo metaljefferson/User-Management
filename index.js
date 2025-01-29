@@ -17,3 +17,7 @@ let userController = new UserController("form-user-create", "table-users")
 // appendChild permite adicionar codigo html, elemento filho do elemento atual
 // if ternario condição pequena 
 // metodo estatico nao precisa da instancia para ser chamado pode ser chamado diretamente
+// Data set = Faz parte da Api web, permite leitura e escrita em elementos com data
+//Json convertido em texto String Json
+//feat: um commit do tipo feat inclui um novo recurso na sua base de código (isso se correlaciona com MINOR do versionamento semântico).
+//fix: um commit do tipo fix soluciona um problema na sua base de código (isso se correlaciona com PATCH do versionamento semântico).

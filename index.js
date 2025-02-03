@@ -1,9 +1,5 @@
 let userController = new UserController("form-user-create", "table-users")
 
-
-
-
-
 // Um objeto e uma variavel que instancia(representa) uma classe
 // Operador logico && "E ao mesmo tempo" para duas condiçoes serem verdadeiras
 // 1 = e atribuir um valor , 2 == e comparação de dois valores e 3 === e compara valor e tipo de dado
@@ -15,9 +11,11 @@ let userController = new UserController("form-user-create", "table-users")
 //Processamento sincrono = Toda a ação entre site e usuario
 // processamento assincrono = Atividades e recursos do site, nao dependem da ação do usuario
 // appendChild permite adicionar codigo html, elemento filho do elemento atual
-// if ternario condição pequena 
+// if ternario condição pequena
 // metodo estatico nao precisa da instancia para ser chamado pode ser chamado diretamente
 // Data set = Faz parte da Api web, permite leitura e escrita em elementos com data
 //Json convertido em texto String Json
 //feat: um commit do tipo feat inclui um novo recurso na sua base de código (isso se correlaciona com MINOR do versionamento semântico).
 //fix: um commit do tipo fix soluciona um problema na sua base de código (isso se correlaciona com PATCH do versionamento semântico).
+// For In Laço para percorrer objetos
+//replace = Funcao nativa que substitui dados, procura o primeiro elemento e substitui

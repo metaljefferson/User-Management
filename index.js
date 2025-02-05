@@ -1,4 +1,4 @@
-let userController = new UserController("form-user-create", "table-users")
+let userController = new UserController("form-user-create", "form-user-update", "table-users")
 
 // Um objeto e uma variavel que instancia(representa) uma classe
 // Operador logico && "E ao mesmo tempo" para duas condiçoes serem verdadeiras
@@ -19,3 +19,6 @@ let userController = new UserController("form-user-create", "table-users")
 //fix: um commit do tipo fix soluciona um problema na sua base de código (isso se correlaciona com PATCH do versionamento semântico).
 // For In Laço para percorrer objetos
 //replace = Funcao nativa que substitui dados, procura o primeiro elemento e substitui
+// Switch o comando de decisao utiliza opcoes pre-definidas
+// default caso nenhuma expressao tenha executado
+// RowIndex conta a posição do elemento baseada no total começando em 1.

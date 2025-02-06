@@ -22,3 +22,5 @@ let userController = new UserController("form-user-create", "form-user-update", 
 // Switch o comando de decisao utiliza opcoes pre-definidas
 // default caso nenhuma expressao tenha executado
 // RowIndex conta a posição do elemento baseada no total começando em 1.
+// object.assign = copia o valor de atributos de um objeto, cria um objeto destino, retornando este objeto.
+// Json.stringfy = transforma um objeto json em uma string

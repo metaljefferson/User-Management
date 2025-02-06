@@ -105,12 +105,12 @@ class UserController {
         })
     }
 
-    getPhoto() {
+    getPhoto(formEl) {
 
         return new Promise((resolve, reject) => {
             let fileReader = new FileReader()
 
-            let elements = [...this.formEl.elements].filter(item => {
+            let elements = [...formEl.elements].filter(item => {
 
                 if (item.name === 'photo') {
                     return item

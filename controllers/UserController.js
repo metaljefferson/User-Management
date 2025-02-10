@@ -40,9 +40,9 @@ class UserController {
                         result._photo = content;
                     }
 
-                tr.dataset.user = JSON.stringify(result)
+                    tr.dataset.user = JSON.stringify(result)
 
-            tr.innerHTML = `
+                    tr.innerHTML = `
                 <td><img src="${result._photo}" alt="User Image" class="img-circle img-sm"></td>
                <td>${result._name}</td>
                <td>${result._email}</td>
@@ -54,21 +54,21 @@ class UserController {
                </td>
                `
 
-                this.addEventsTr(tr)
+                    this.addEventsTr(tr)
 
-                this.updateCount()
+                    this.updateCount()
 
-                console.log(this.updateCount._photo)
+                    console.log(this.updateCount._photo)
 
-                this.formUpdateEl.reset()
+                    this.formUpdateEl.reset()
 
-                btn.disabled = false
+                    btn.disabled = false
 
-                this.showPanelCreate()
+                    this.showPanelCreate()
 
-            }, (e) => {
-                console.error(e)
-            })
+                }, (e) => {
+                    console.error(e)
+                })
         })
     }
 
@@ -90,17 +90,17 @@ class UserController {
             this.getPhoto(this.formEl).then(
                 (content) => {
 
-                values.photo = content
+                    values.photo = content
 
-                this.addLine(values)
+                    this.addLine(values)
 
-                this.formEl.reset();
+                    this.formEl.reset();
 
-                btn.disabled = false
+                    btn.disabled = false
 
-            }, (e) => {
-                console.error(e)
-            })
+                }, (e) => {
+                    console.error(e)
+                })
 
         })
     }
@@ -202,7 +202,7 @@ class UserController {
             <td>${Utils.dateFormat(dataUser.register)}</td>
             <td>
                     <button type="button" class="btn btn-primary btn-edit btn-xs btn-flat">Editar</button>
-                    <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+                    <button type="button" class="btn btn-danger btn-delete btn-xs btn-flat">Excluir</button>
             </td>
         `
         this.addEventsTr(tr)
@@ -212,6 +212,14 @@ class UserController {
         this.updateCount()
     }
     addEventsTr(tr) {
+
+        tr.querySelector(".btn-delete").addEventListener("click", e => {
+
+            if (confirm("Deseja realmente excluir?")) {
+                tr.remove()
+                this.updateCount()
+            }
+        })
         tr.querySelector(".btn-edit").addEventListener("click", e => {
 
             let json = JSON.parse(tr.dataset.user)

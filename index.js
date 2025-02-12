@@ -24,3 +24,6 @@ let userController = new UserController("form-user-create", "form-user-update", 
 // RowIndex conta a posição do elemento baseada no total começando em 1.
 // object.assign = copia o valor de atributos de um objeto, cria um objeto destino, retornando este objeto.
 // Json.stringfy = transforma um objeto json em uma string
+// SessionStorage = recurso da API web Armazena dados na sessao do usuario
+//LocalStorage = Recursos da API web Armazena dados no navegador do usuario
+// lolcaStorage.setItem = pemite grava no localStorage

@@ -27,3 +27,9 @@ let userController = new UserController("form-user-create", "form-user-update", 
 // SessionStorage = recurso da API web Armazena dados na sessao do usuario
 //LocalStorage = Recursos da API web Armazena dados no navegador do usuario
 // lolcaStorage.setItem = pemite grava no localStorage
+// Dao data acess object = Uma abstração do controle de dados
+//set metodo para atribuição de valores
+// filter : localiza um elemento dentro de um array retorna para a tela a informação
+// Map : mapeia sua posição, se alterar dados, subtitui
+// splice : remove um elemento do array
+//removeItem = remove uma chave do localStorage
